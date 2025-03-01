@@ -19,9 +19,28 @@
   body {
     @apply font-raleway;
   }
+
+  main {
+    @apply pt-20; /* Add padding for fixed header */
+  }
 }
 
 @layer components {
+  .navbar {
+    @apply fixed w-full top-0 left-0 z-[99999] bg-white;
+  }
+  .nav-container {
+    @apply h-20 bg-white border-b;
+  }
+  .toggle-menu {
+    @apply absolute w-full bg-white transform transition-all duration-700;
+  }
+  .toggle-menu.closed {
+    @apply -translate-y-full invisible;
+  }
+  .toggle-menu.open {
+    @apply translate-y-0 visible;
+  }
   .burger {
     @apply block absolute top-5 right-5 md:hidden;
   }
@@ -35,7 +54,7 @@
     @apply bg-s_skin w-20;
   }
   .line {
-    @apply absolute w-0 h-[3px] top-1/2 -translate-y-1/2 left-full  transition-all duration-700 group-hover:w-20 z-50;
+    @apply absolute w-0 h-[3px] top-1/2 -translate-y-1/2 left-full transition-all duration-700 group-hover:w-20 z-50;
   }
   .social-link {
     @apply text-s_black font-normal text-base md:text-xl leading-8 font-raleway relative transition-all duration-500;

@@ -61,7 +61,7 @@ export type NavigationDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = never;
+type PageDocumentDataSlicesSlice = HeroSliceSlice;
 
 /**
  * Content for Page documents
@@ -192,6 +192,76 @@ export type AllDocumentTypes =
   | PageDocument
   | SettingsDocument;
 
+/**
+ * Item in *HeroSlice → Default → Primary → Slider*
+ */
+export interface HeroSliceSliceDefaultPrimarySliderItem {
+  /**
+   * Image field in *HeroSlice → Default → Primary → Slider*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slice.default.primary.slider[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *HeroSlice → Default → Primary*
+ */
+export interface HeroSliceSliceDefaultPrimary {
+  /**
+   * Heading field in *HeroSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slice.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Slider field in *HeroSlice → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_slice.default.primary.slider[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  slider: prismic.GroupField<Simplify<HeroSliceSliceDefaultPrimarySliderItem>>;
+}
+
+/**
+ * Default variation for HeroSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HeroSlice*
+ */
+type HeroSliceSliceVariation = HeroSliceSliceDefault;
+
+/**
+ * HeroSlice Shared Slice
+ *
+ * - **API ID**: `hero_slice`
+ * - **Description**: HeroSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceSlice = prismic.SharedSlice<
+  "hero_slice",
+  HeroSliceSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -222,6 +292,11 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
+      HeroSliceSlice,
+      HeroSliceSliceDefaultPrimarySliderItem,
+      HeroSliceSliceDefaultPrimary,
+      HeroSliceSliceVariation,
+      HeroSliceSliceDefault,
     };
   }
 }
