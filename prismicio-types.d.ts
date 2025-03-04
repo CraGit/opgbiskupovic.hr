@@ -62,6 +62,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ProjectsSliceSlice
   | ServicesSliceSlice
   | AboutSliceSlice
   | QuoteSliceSlice
@@ -367,6 +368,78 @@ export type HeroSliceSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *ProjectsSlice → Default → Primary → Projects*
+ */
+export interface ProjectsSliceSliceDefaultPrimaryProjectsItem {
+  /**
+   * Image field in *ProjectsSlice → Default → Primary → Projects*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_slice.default.primary.projects[].image
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  image: prismic.KeyTextField;
+
+  /**
+   * Heading field in *ProjectsSlice → Default → Primary → Projects*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_slice.default.primary.projects[].heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Subheading field in *ProjectsSlice → Default → Primary → Projects*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_slice.default.primary.projects[].subheading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subheading: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ProjectsSlice → Default → Primary*
+ */
+export interface ProjectsSliceSliceDefaultPrimary {
+  /**
+   * Heading field in *ProjectsSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_slice.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Subtitle field in *ProjectsSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_slice.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Projects field in *ProjectsSlice → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: projects_slice.default.primary.projects[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  projects: prismic.GroupField<
+    Simplify<ProjectsSliceSliceDefaultPrimaryProjectsItem>
+  >;
+}
+
+/**
  * Default variation for ProjectsSlice Slice
  *
  * - **API ID**: `default`
@@ -375,7 +448,7 @@ export type HeroSliceSlice = prismic.SharedSlice<
  */
 export type ProjectsSliceSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<ProjectsSliceSliceDefaultPrimary>,
   never
 >;
 
@@ -584,6 +657,8 @@ declare module "@prismicio/client" {
       HeroSliceSliceVariation,
       HeroSliceSliceDefault,
       ProjectsSliceSlice,
+      ProjectsSliceSliceDefaultPrimaryProjectsItem,
+      ProjectsSliceSliceDefaultPrimary,
       ProjectsSliceSliceVariation,
       ProjectsSliceSliceDefault,
       QuoteSliceSlice,
