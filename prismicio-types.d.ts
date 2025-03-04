@@ -367,6 +367,36 @@ export type HeroSliceSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Default variation for ProjectsSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectsSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *ProjectsSlice*
+ */
+type ProjectsSliceSliceVariation = ProjectsSliceSliceDefault;
+
+/**
+ * ProjectsSlice Shared Slice
+ *
+ * - **API ID**: `projects_slice`
+ * - **Description**: ProjectsSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectsSliceSlice = prismic.SharedSlice<
+  "projects_slice",
+  ProjectsSliceSliceVariation
+>;
+
+/**
  * Primary content in *QuoteSlice → Default → Primary*
  */
 export interface QuoteSliceSliceDefaultPrimary {
@@ -553,6 +583,9 @@ declare module "@prismicio/client" {
       HeroSliceSliceDefaultPrimary,
       HeroSliceSliceVariation,
       HeroSliceSliceDefault,
+      ProjectsSliceSlice,
+      ProjectsSliceSliceVariation,
+      ProjectsSliceSliceDefault,
       QuoteSliceSlice,
       QuoteSliceSliceDefaultPrimary,
       QuoteSliceSliceVariation,
