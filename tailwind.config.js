@@ -12,6 +12,7 @@ module.exports = {
       Playfair: ["Playfair Display", "serif"],
       rufina: ["Rufina", "serif"],
       prata: ["Prata", "serif"],
+      saintdelafield: ["Mrs Saint Delafield", "cursive"],
     },
     colors: {
       mycolor: "#EBB444",

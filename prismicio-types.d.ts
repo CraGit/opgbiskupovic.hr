@@ -61,7 +61,11 @@ export type NavigationDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = HeroSliceSlice;
+type PageDocumentDataSlicesSlice =
+  | ServicesSliceSlice
+  | AboutSliceSlice
+  | QuoteSliceSlice
+  | HeroSliceSlice;
 
 /**
  * Content for Page documents
@@ -193,6 +197,106 @@ export type AllDocumentTypes =
   | SettingsDocument;
 
 /**
+ * Item in *AboutSlice → Default → Primary → Group*
+ */
+export interface AboutSliceSliceDefaultPrimaryGroupItem {
+  /**
+   * Number field in *AboutSlice → Default → Primary → Group*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_slice.default.primary.group[].number
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  number: prismic.KeyTextField;
+
+  /**
+   * Label field in *AboutSlice → Default → Primary → Group*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_slice.default.primary.group[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *AboutSlice → Default → Primary*
+ */
+export interface AboutSliceSliceDefaultPrimary {
+  /**
+   * Heading field in *AboutSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_slice.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Content field in *AboutSlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_slice.default.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Group field in *AboutSlice → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_slice.default.primary.group[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  group: prismic.GroupField<Simplify<AboutSliceSliceDefaultPrimaryGroupItem>>;
+
+  /**
+   * Image field in *AboutSlice → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_slice.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for AboutSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AboutSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *AboutSlice*
+ */
+type AboutSliceSliceVariation = AboutSliceSliceDefault;
+
+/**
+ * AboutSlice Shared Slice
+ *
+ * - **API ID**: `about_slice`
+ * - **Description**: AboutSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutSliceSlice = prismic.SharedSlice<
+  "about_slice",
+  AboutSliceSliceVariation
+>;
+
+/**
  * Item in *HeroSlice → Default → Primary → Slider*
  */
 export interface HeroSliceSliceDefaultPrimarySliderItem {
@@ -262,6 +366,153 @@ export type HeroSliceSlice = prismic.SharedSlice<
   HeroSliceSliceVariation
 >;
 
+/**
+ * Primary content in *QuoteSlice → Default → Primary*
+ */
+export interface QuoteSliceSliceDefaultPrimary {
+  /**
+   * Content field in *QuoteSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: quote_slice.default.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  content: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for QuoteSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type QuoteSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<QuoteSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *QuoteSlice*
+ */
+type QuoteSliceSliceVariation = QuoteSliceSliceDefault;
+
+/**
+ * QuoteSlice Shared Slice
+ *
+ * - **API ID**: `quote_slice`
+ * - **Description**: QuoteSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type QuoteSliceSlice = prismic.SharedSlice<
+  "quote_slice",
+  QuoteSliceSliceVariation
+>;
+
+/**
+ * Item in *ServicesSlice → Default → Primary → Services*
+ */
+export interface ServicesSliceSliceDefaultPrimaryServicesItem {
+  /**
+   * Heading field in *ServicesSlice → Default → Primary → Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_slice.default.primary.services[].heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Image field in *ServicesSlice → Default → Primary → Services*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_slice.default.primary.services[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Content field in *ServicesSlice → Default → Primary → Services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_slice.default.primary.services[].content
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  content: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ServicesSlice → Default → Primary*
+ */
+export interface ServicesSliceSliceDefaultPrimary {
+  /**
+   * Heading field in *ServicesSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_slice.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Subtitle field in *ServicesSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_slice.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Services field in *ServicesSlice → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_slice.default.primary.services[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  services: prismic.GroupField<
+    Simplify<ServicesSliceSliceDefaultPrimaryServicesItem>
+  >;
+}
+
+/**
+ * Default variation for ServicesSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ServicesSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ServicesSlice*
+ */
+type ServicesSliceSliceVariation = ServicesSliceSliceDefault;
+
+/**
+ * ServicesSlice Shared Slice
+ *
+ * - **API ID**: `services_slice`
+ * - **Description**: ServicesSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesSliceSlice = prismic.SharedSlice<
+  "services_slice",
+  ServicesSliceSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -292,11 +543,25 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
+      AboutSliceSlice,
+      AboutSliceSliceDefaultPrimaryGroupItem,
+      AboutSliceSliceDefaultPrimary,
+      AboutSliceSliceVariation,
+      AboutSliceSliceDefault,
       HeroSliceSlice,
       HeroSliceSliceDefaultPrimarySliderItem,
       HeroSliceSliceDefaultPrimary,
       HeroSliceSliceVariation,
       HeroSliceSliceDefault,
+      QuoteSliceSlice,
+      QuoteSliceSliceDefaultPrimary,
+      QuoteSliceSliceVariation,
+      QuoteSliceSliceDefault,
+      ServicesSliceSlice,
+      ServicesSliceSliceDefaultPrimaryServicesItem,
+      ServicesSliceSliceDefaultPrimary,
+      ServicesSliceSliceVariation,
+      ServicesSliceSliceDefault,
     };
   }
 }

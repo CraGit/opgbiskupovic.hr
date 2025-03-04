@@ -1,0 +1,66 @@
+{
+  "id": "about_slice",
+  "type": "SharedSlice",
+  "name": "AboutSlice",
+  "description": "AboutSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "content": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Content",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,embed,list-item,o-list-item"
+          }
+        },
+        "group": {
+          "type": "Group",
+          "config": {
+            "label": "Group",
+            "repeat": true,
+            "fields": {
+              "number": {
+                "type": "Text",
+                "config": {
+                  "label": "Number",
+                  "placeholder": ""
+                }
+              },
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "Label",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
