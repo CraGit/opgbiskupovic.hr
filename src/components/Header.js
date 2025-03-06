@@ -15,6 +15,7 @@ const localeLabels = {
 export function Header({ locales = [], navigation, settings }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const data = settings?.data || {};
 
   // Determine current locale from pathname
   const currentLocale = pathname.startsWith("/hr") ? "/hr" : "";
@@ -106,35 +107,41 @@ export function Header({ locales = [], navigation, settings }) {
               })}
             </ul>
             <ul className="transform transition-all duration-500 delay-150 flex flex-col md:items-end justify-center w-full gap-4 md:gap-6">
-              <li
-                className="link-hoder transition-all duration-500 -translate-y-10"
-                style={{ transitionDelay: "100ms" }}
-              >
-                <a href="#" className="social-link group font-raleway">
-                  Facebook <div className="line bg-s_skin"></div>
-                </a>
-              </li>
-              <li
-                className="link-hoder transition-all duration-500 -translate-y-10"
-                style={{ transitionDelay: "300ms" }}
-              >
-                <a href="#" className="social-link group font-raleway">
-                  Instagram <div className="line bg-s_skin"></div>
-                </a>
-              </li>
-              <li
-                className="link-hoder transition-all duration-500 -translate-y-10"
-                style={{ transitionDelay: "500ms" }}
-              >
-                <a href="#" className="social-link group font-raleway">
-                  Twitter <div className="line bg-s_skin"></div>
-                </a>
-              </li>
+              {data.facebook && (
+                <li
+                  className="link-hoder transition-all duration-500 -translate-y-10"
+                  style={{ transitionDelay: "100ms" }}
+                >
+                  <a 
+                    href={data.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-link group font-raleway"
+                  >
+                    Facebook <div className="line bg-s_skin"></div>
+                  </a>
+                </li>
+              )}
+              {data.instagram && (
+                <li
+                  className="link-hoder transition-all duration-500 -translate-y-10"
+                  style={{ transitionDelay: "300ms" }}
+                >
+                  <a 
+                    href={data.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-link group font-raleway"
+                  >
+                    Instagram <div className="line bg-s_skin"></div>
+                  </a>
+                </li>
+              )}
               {locales.map((locale, index) => (
                 <li
                   key={locale.lang}
                   className="link-hoder transition-all duration-500 -translate-y-10"
-                  style={{ transitionDelay: `${(index + 4) * 200}ms` }}
+                  style={{ transitionDelay: `${(index + 2) * 200}ms` }}
                 >
                   <PrismicNextLink
                     href={locale.url}
