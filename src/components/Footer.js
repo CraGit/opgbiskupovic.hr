@@ -1,10 +1,17 @@
+"use client";
+
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import * as prismic from "@prismicio/client";
 import Link from "next/link";
 import { PrismicText } from "@prismicio/react";
+import { usePathname } from "next/navigation";
 
 export function Footer({ settings, navigation }) {
   const data = settings?.data || {};
+  const pathname = usePathname();
+  
+  // Determine current locale from pathname
+  const currentLocale = pathname.startsWith('/hr') ? '/hr' : '';
   
   return (
     <footer className="h-auto w-full p-4 pt-0 lg:pt-32 border-0 border-white bg-[#7C7669]">
@@ -47,7 +54,7 @@ export function Footer({ settings, navigation }) {
         <div className="py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-10 border-t border-white border-opacity-20">
           <ul className="flex flex-col max-sm:items-center gap-8">
             <li>
-              <Link href="/" className="py-1.5">
+              <Link href={`${currentLocale}`} className="py-1.5">
                 {prismic.isFilled.image(data.logo_white) ? (
                   <PrismicNextImage
                     field={data.logo_white}
@@ -67,7 +74,7 @@ export function Footer({ settings, navigation }) {
             </li>
             <li className="text-sm text-white text-opacity-80 leading-8">
               {new Date().getFullYear()}{" "}
-              <Link href="/" className="hover:text-white">
+              <Link href={`${currentLocale}`} className="hover:text-white">
                 OPG Biskupović
               </Link>{" "}
               <br />

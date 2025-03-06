@@ -5,6 +5,7 @@ import { PrismicText } from "@prismicio/react";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const localeLabels = {
   "en-us": "EN",
@@ -14,6 +15,9 @@ const localeLabels = {
 export function Header({ locales = [], navigation, settings }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  
+  // Determine current locale from pathname
+  const currentLocale = pathname.startsWith('/hr') ? '/hr' : '';
 
   useEffect(() => {
     const menu = document.getElementById('toggle-menu');
@@ -41,11 +45,11 @@ export function Header({ locales = [], navigation, settings }) {
       <div className="nav-container">
         <div className="w-full max-w-6xl px-4 mx-auto relative">
           <div className="flex w-full justify-between items-center h-20">
-            <PrismicNextLink href="/" className="py-1.5">
+            <Link href={`${currentLocale}`} className="py-1.5">
               {prismic.isFilled.image(settings.data.logo) && (
                 <PrismicNextImage field={settings.data.logo} alt="" />
               )}
-            </PrismicNextLink>
+            </Link>
             <ul className="flex items-center gap-3">
               <li className="font-medium font-raleway text-lg uppercase text-black">Menu</li>
               <li className="flex items-center">
