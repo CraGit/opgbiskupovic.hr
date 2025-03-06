@@ -62,6 +62,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | VideoSliceSlice
   | MapSliceSlice
   | ContactSliceSlice
   | TestimonialsSliceSlice
@@ -896,6 +897,51 @@ export type TestimonialsSliceSlice = prismic.SharedSlice<
   TestimonialsSliceSliceVariation
 >;
 
+/**
+ * Primary content in *VideoSlice → Default → Primary*
+ */
+export interface VideoSliceSliceDefaultPrimary {
+  /**
+   * Video Embed field in *VideoSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_slice.default.primary.video_embed
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  video_embed: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for VideoSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<VideoSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *VideoSlice*
+ */
+type VideoSliceSliceVariation = VideoSliceSliceDefault;
+
+/**
+ * VideoSlice Shared Slice
+ *
+ * - **API ID**: `video_slice`
+ * - **Description**: VideoSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoSliceSlice = prismic.SharedSlice<
+  "video_slice",
+  VideoSliceSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -963,6 +1009,10 @@ declare module "@prismicio/client" {
       TestimonialsSliceSliceDefaultPrimary,
       TestimonialsSliceSliceVariation,
       TestimonialsSliceSliceDefault,
+      VideoSliceSlice,
+      VideoSliceSliceDefaultPrimary,
+      VideoSliceSliceVariation,
+      VideoSliceSliceDefault,
     };
   }
 }

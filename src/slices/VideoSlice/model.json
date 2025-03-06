@@ -1,0 +1,26 @@
+{
+  "id": "video_slice",
+  "type": "SharedSlice",
+  "name": "VideoSlice",
+  "description": "VideoSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "video_embed": {
+          "type": "Text",
+          "config": {
+            "label": "Video Embed",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

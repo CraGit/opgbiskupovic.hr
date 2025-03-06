@@ -11,4 +11,5 @@ export const components = {
   quote_slice: dynamic(() => import("./QuoteSlice")),
   services_slice: dynamic(() => import("./ServicesSlice")),
   testimonials_slice: dynamic(() => import("./TestimonialsSlice")),
+  video_slice: dynamic(() => import("./VideoSlice")),
 };

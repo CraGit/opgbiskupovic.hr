@@ -1,0 +1,14 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"video_embed": {
+				"__TYPE__": "FieldContent",
+				"value": "bank",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]
