@@ -3,14 +3,22 @@
  * @typedef {import("@prismicio/react").SliceComponentProps<ProjectsSliceSlice>} ProjectsSliceProps
  * @param {ProjectsSliceProps}
  */
+import Projects from "@/components/Projects";
+
 const ProjectsSlice = ({ slice }) => {
+  const { heading, subtitle, projects } = slice.primary;
+  
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for projects_slice (variation: {slice.variation})
-      Slices
+      <Projects 
+        heading={heading}
+        subtitle={subtitle}
+        projects={projects}
+        viewMoreText="VIEW MORE"
+      />
     </section>
   );
 };

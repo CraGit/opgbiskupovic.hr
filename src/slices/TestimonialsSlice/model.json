@@ -1,8 +1,8 @@
 {
-  "id": "projects_slice",
+  "id": "testimonials_slice",
   "type": "SharedSlice",
-  "name": "ProjectsSlice",
-  "description": "ProjectsSlice",
+  "name": "TestimonialsSlice",
+  "description": "TestimonialsSlice",
   "variations": [
     {
       "id": "default",
@@ -26,23 +26,30 @@
             "placeholder": ""
           }
         },
-        "projects": {
+        "testimonials": {
           "type": "Group",
           "config": {
-            "label": "Projects",
+            "label": "Testimonials",
             "repeat": true,
             "fields": {
-              "heading": {
+              "name": {
                 "type": "Text",
                 "config": {
-                  "label": "Heading",
+                  "label": "Name",
                   "placeholder": ""
                 }
               },
-              "subheading": {
+              "job": {
                 "type": "Text",
                 "config": {
-                  "label": "Subheading",
+                  "label": "Job",
+                  "placeholder": ""
+                }
+              },
+              "content": {
+                "type": "Text",
+                "config": {
+                  "label": "Content",
                   "placeholder": ""
                 }
               },
