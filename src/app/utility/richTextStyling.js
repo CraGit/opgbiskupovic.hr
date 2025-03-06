@@ -79,7 +79,7 @@ const richTextStyling = {
     </blockquote>
   ),
   em: ({ children }) => (
-    <span className="py-8 text-4xl lg:text-7xl text-center font-saintdelafield leading-relaxed text-s_black">
+    <span className="py-8 text-4xl lg:text-7xl text-center font-moondance leading-relaxed text-s_black">
       {children}
     </span>
   ),
