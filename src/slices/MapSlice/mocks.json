@@ -1,0 +1,14 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"map_embed": {
+				"__TYPE__": "FieldContent",
+				"value": "are",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

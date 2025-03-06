@@ -62,6 +62,8 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | MapSliceSlice
+  | ContactSliceSlice
   | TestimonialsSliceSlice
   | ProjectsSliceSlice
   | ServicesSliceSlice
@@ -354,6 +356,71 @@ export type AboutSliceSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ContactSlice → Default → Primary*
+ */
+export interface ContactSliceSliceDefaultPrimary {
+  /**
+   * Heading field in *ContactSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_slice.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Subtitle field in *ContactSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_slice.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Button Text field in *ContactSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_slice.default.primary.button_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ContactSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContactSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ContactSlice*
+ */
+type ContactSliceSliceVariation = ContactSliceSliceDefault;
+
+/**
+ * ContactSlice Shared Slice
+ *
+ * - **API ID**: `contact_slice`
+ * - **Description**: ContactSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSliceSlice = prismic.SharedSlice<
+  "contact_slice",
+  ContactSliceSliceVariation
+>;
+
+/**
  * Item in *HeroSlice → Default → Primary → Slider*
  */
 export interface HeroSliceSliceDefaultPrimarySliderItem {
@@ -421,6 +488,51 @@ type HeroSliceSliceVariation = HeroSliceSliceDefault;
 export type HeroSliceSlice = prismic.SharedSlice<
   "hero_slice",
   HeroSliceSliceVariation
+>;
+
+/**
+ * Primary content in *MapSlice → Default → Primary*
+ */
+export interface MapSliceSliceDefaultPrimary {
+  /**
+   * Map Embed field in *MapSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: map_slice.default.primary.map_embed
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  map_embed: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for MapSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MapSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MapSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *MapSlice*
+ */
+type MapSliceSliceVariation = MapSliceSliceDefault;
+
+/**
+ * MapSlice Shared Slice
+ *
+ * - **API ID**: `map_slice`
+ * - **Description**: MapSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MapSliceSlice = prismic.SharedSlice<
+  "map_slice",
+  MapSliceSliceVariation
 >;
 
 /**
@@ -819,11 +931,19 @@ declare module "@prismicio/client" {
       AboutSliceSliceDefaultPrimary,
       AboutSliceSliceVariation,
       AboutSliceSliceDefault,
+      ContactSliceSlice,
+      ContactSliceSliceDefaultPrimary,
+      ContactSliceSliceVariation,
+      ContactSliceSliceDefault,
       HeroSliceSlice,
       HeroSliceSliceDefaultPrimarySliderItem,
       HeroSliceSliceDefaultPrimary,
       HeroSliceSliceVariation,
       HeroSliceSliceDefault,
+      MapSliceSlice,
+      MapSliceSliceDefaultPrimary,
+      MapSliceSliceVariation,
+      MapSliceSliceDefault,
       ProjectsSliceSlice,
       ProjectsSliceSliceDefaultPrimaryProjectsItem,
       ProjectsSliceSliceDefaultPrimary,

@@ -1,0 +1,26 @@
+{
+  "id": "map_slice",
+  "type": "SharedSlice",
+  "name": "MapSlice",
+  "description": "MapSlice",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "map_embed": {
+          "type": "Text",
+          "config": {
+            "label": "Map Embed",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

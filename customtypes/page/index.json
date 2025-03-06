@@ -18,6 +18,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "map_slice": {
+              "type": "SharedSlice"
+            },
+            "contact_slice": {
+              "type": "SharedSlice"
+            },
             "testimonials_slice": {
               "type": "SharedSlice"
             },
