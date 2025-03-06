@@ -1,3 +1,5 @@
+import Map from "@/components/Map";
+
 /**
  * @typedef {import("@prismicio/client").Content.MapSliceSlice} MapSliceSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<MapSliceSlice>} MapSliceProps
@@ -9,7 +11,7 @@ const MapSlice = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      Placeholder component for map_slice (variation: {slice.variation}) Slices
+      <Map map_embed_url={slice.primary.map_embed} />
     </section>
   );
 };
