@@ -1,13 +1,14 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function Video({ video_embed }) {
   const iframeRef = useRef(null);
   const containerRef = useRef(null);
+  const [embedUrl, setEmbedUrl] = useState("");
   
   // Function to modify YouTube URL to enable autoplay, loop, and hide controls
-  const getEnhancedVideoUrl = (url) => {
+  const getEnhancedVideoUrl = (url, origin = "") => {
     if (!url) return "";
     
     // Check if it's a YouTube URL
@@ -23,20 +24,24 @@ export default function Video({ video_embed }) {
       }
       
       // Add parameters to maximize hiding of YouTube branding
+      const originParam = origin ? `&origin=${encodeURIComponent(origin)}` : '';
+      
       enhancedUrl = enhancedUrl.includes('?') 
-        ? `${enhancedUrl}&autoplay=1&loop=1&playlist=${enhancedUrl.split('/').pop().split('?')[0]}&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&color=white&disablekb=1&fs=0&playsinline=1&origin=${encodeURIComponent(window.location.origin)}`
-        : `${enhancedUrl}?autoplay=1&loop=1&playlist=${enhancedUrl.split('/').pop()}&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&color=white&disablekb=1&fs=0&playsinline=1&origin=${encodeURIComponent(window.location.origin)}`;
+        ? `${enhancedUrl}&autoplay=1&loop=1&playlist=${enhancedUrl.split('/').pop().split('?')[0]}&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&color=white&disablekb=1&fs=0&playsinline=1${originParam}`
+        : `${enhancedUrl}?autoplay=1&loop=1&playlist=${enhancedUrl.split('/').pop()}&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&color=white&disablekb=1&fs=0&playsinline=1${originParam}`;
       
       return enhancedUrl;
     }
     
     return url;
   };
-
-  const embedUrl = getEnhancedVideoUrl(video_embed);
   
   // Effect to handle iframe and container styling
   useEffect(() => {
+    // Set the embed URL with origin once we're in the browser
+    const origin = window.location.origin;
+    setEmbedUrl(getEnhancedVideoUrl(video_embed, origin));
+    
     if (iframeRef.current) {
       // Try to access the iframe content if possible (may be restricted by CORS)
       try {
@@ -53,14 +58,12 @@ export default function Video({ video_embed }) {
     }
     
     // Apply CSS to hide YouTube logo and title using container overflow
-    if (containerRef.current) {
+    if (containerRef.current && iframeRef.current) {
       // Scale up the iframe slightly and position it to hide the top bar
-      if (iframeRef.current) {
-        iframeRef.current.style.transform = 'scale(1.01)';
-        iframeRef.current.style.top = '-1px';
-      }
+      iframeRef.current.style.transform = 'scale(1.01)';
+      iframeRef.current.style.top = '-1px';
     }
-  }, []);
+  }, [video_embed]);
 
   return (
     <div className="video-sec relative bg-white">
