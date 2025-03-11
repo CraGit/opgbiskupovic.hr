@@ -1,1 +1,1 @@
-#7C7668 tamna zlatna
+#7C7668 tamna zlatna boja
