@@ -62,6 +62,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | StorySliceSlice
   | VideoSliceSlice
   | MapSliceSlice
   | ContactSliceSlice
@@ -541,26 +542,6 @@ export type MapSliceSlice = prismic.SharedSlice<
  */
 export interface ProjectsSliceSliceDefaultPrimaryProjectsItem {
   /**
-   * Heading field in *ProjectsSlice → Default → Primary → Projects*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: projects_slice.default.primary.projects[].heading
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  heading: prismic.KeyTextField;
-
-  /**
-   * Subheading field in *ProjectsSlice → Default → Primary → Projects*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: projects_slice.default.primary.projects[].subheading
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  subheading: prismic.KeyTextField;
-
-  /**
    * Image field in *ProjectsSlice → Default → Primary → Projects*
    *
    * - **Field Type**: Image
@@ -586,14 +567,14 @@ export interface ProjectsSliceSliceDefaultPrimary {
   heading: prismic.KeyTextField;
 
   /**
-   * Subtitle field in *ProjectsSlice → Default → Primary*
+   * Description field in *ProjectsSlice → Default → Primary*
    *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: projects_slice.default.primary.subtitle
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: A nice description of your projects
+   * - **API ID Path**: projects_slice.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  subtitle: prismic.KeyTextField;
+  description: prismic.RichTextField;
 
   /**
    * Projects field in *ProjectsSlice → Default → Primary*
@@ -783,6 +764,98 @@ type ServicesSliceSliceVariation = ServicesSliceSliceDefault;
 export type ServicesSliceSlice = prismic.SharedSlice<
   "services_slice",
   ServicesSliceSliceVariation
+>;
+
+/**
+ * Item in *StorySlice → Default → Primary → Projects*
+ */
+export interface StorySliceSliceDefaultPrimaryProjectsItem {
+  /**
+   * Image field in *StorySlice → Default → Primary → Projects*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: story_slice.default.primary.projects[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Content field in *StorySlice → Default → Primary → Projects*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: story_slice.default.primary.projects[].content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *StorySlice → Default → Primary*
+ */
+export interface StorySliceSliceDefaultPrimary {
+  /**
+   * Heading field in *StorySlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: story_slice.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Subtitle field in *StorySlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: story_slice.default.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Projects field in *StorySlice → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: story_slice.default.primary.projects[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  projects: prismic.GroupField<
+    Simplify<StorySliceSliceDefaultPrimaryProjectsItem>
+  >;
+}
+
+/**
+ * Default variation for StorySlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StorySliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<StorySliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *StorySlice*
+ */
+type StorySliceSliceVariation = StorySliceSliceDefault;
+
+/**
+ * StorySlice Shared Slice
+ *
+ * - **API ID**: `story_slice`
+ * - **Description**: StorySlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StorySliceSlice = prismic.SharedSlice<
+  "story_slice",
+  StorySliceSliceVariation
 >;
 
 /**
@@ -1004,6 +1077,11 @@ declare module "@prismicio/client" {
       ServicesSliceSliceDefaultPrimary,
       ServicesSliceSliceVariation,
       ServicesSliceSliceDefault,
+      StorySliceSlice,
+      StorySliceSliceDefaultPrimaryProjectsItem,
+      StorySliceSliceDefaultPrimary,
+      StorySliceSliceVariation,
+      StorySliceSliceDefault,
       TestimonialsSliceSlice,
       TestimonialsSliceSliceDefaultPrimaryTestimonialsItem,
       TestimonialsSliceSliceDefaultPrimary,

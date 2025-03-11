@@ -10,6 +10,7 @@ export const components = {
   projects_slice: dynamic(() => import("./ProjectsSlice")),
   quote_slice: dynamic(() => import("./QuoteSlice")),
   services_slice: dynamic(() => import("./ServicesSlice")),
+  story_slice: dynamic(() => import("./StorySlice")),
   testimonials_slice: dynamic(() => import("./TestimonialsSlice")),
   video_slice: dynamic(() => import("./VideoSlice")),
 };

@@ -1,8 +1,8 @@
 {
-  "id": "projects_slice",
+  "id": "story_slice",
   "type": "SharedSlice",
-  "name": "ProjectsSlice",
-  "description": "ProjectsSlice",
+  "name": "StorySlice",
+  "description": "StorySlice",
   "variations": [
     {
       "id": "default",
@@ -19,13 +19,11 @@
             "placeholder": ""
           }
         },
-        "description": {
-          "type": "StructuredText",
+        "subtitle": {
+          "type": "Text",
           "config": {
-            "label": "Description",
-            "placeholder": "A nice description of your projects",
-            "allowTargetBlank": true,
-            "multi": "paragraph,heading2,strong,em,list-item"
+            "label": "Subtitle",
+            "placeholder": ""
           }
         },
         "projects": {
@@ -40,6 +38,15 @@
                   "label": "Image",
                   "constraint": {},
                   "thumbnails": []
+                }
+              },
+              "content": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Content",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,embed,list-item,o-list-item,rtl"
                 }
               }
             }
