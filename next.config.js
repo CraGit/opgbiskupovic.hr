@@ -6,7 +6,7 @@ const nextConfig = async () => {
       return [
         {
           source: "/admin",
-          destination: "https://opgbiskupovic.prismic.io/",
+          destination: "https://opgbiskupovichr.prismic.io/",
           permanent: true,
         },
       ];
