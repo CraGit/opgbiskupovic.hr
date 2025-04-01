@@ -24,7 +24,7 @@ export default function Story({
   viewMoreText = "",
 }) {
   return (
-    <div className="project-sec relative py-14 lg:pb-24 bg-white">
+    <div className="project-sec relative py-24 lg:pb-24 bg-white">
       <div className="w-full max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 relative max-w-md md:max-w-full mx-auto">
           <div className="desc row-span-1 lg:py-7">
