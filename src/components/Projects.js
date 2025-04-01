@@ -18,7 +18,7 @@ export default function Projects({
         <div className="grid grid-cols-1 md:grid-cols-2 md:mb-0 md:gap-8 relative hover:cursor-pointer max-w-md md:max-w-full mx-auto">
           <div className="desc row-span-1 lg:py-7">
             <h2
-              className="heading mb-8 md:text-left bg-white relative z-[5]"
+              className="heading mb-8 md:text-left bg-white relative z-[5] text-[#7C7669]"
               data-aos="fade-up"
             >
               {heading}

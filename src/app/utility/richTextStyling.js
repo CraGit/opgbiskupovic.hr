@@ -2,44 +2,48 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 
 const richTextStyling = {
   paragraph: ({ children }) => (
-    <p className="mb-2 leading-relaxed text-dark-2 font-xl">{children}</p>
+    <p className="mb-2 leading-relaxed text-[#7C7669] font-xl">{children}</p>
   ),
   heading1: ({ children }) => (
-    <h1 className="mb-4 text-dark-2 font-semibold leading-tight text-4xl">
+    <h1 className="mb-4 text-[#7C7669] font-semibold leading-tight text-4xl">
       {children}
     </h1>
   ),
   heading2: ({ children }) => (
-    <h2 className="mb-4 text-dark-2 font-semibold leading-tight text-3xl">
+    <h2 className="mb-4 text-[#7C7669] font-semibold leading-tight text-3xl">
       {children}
     </h2>
   ),
   heading3: ({ children }) => (
-    <h3 className="mb-4 text-dark-2 font-semibold leading-tight text-2xl">
+    <h3 className="mb-4 text-[#7C7669] font-semibold leading-tight text-2xl">
       {children}
     </h3>
   ),
   heading4: ({ children }) => (
-    <h4 className="mb-4 text-dark-2 font-semibold leading-tight text-xl">
+    <h4 className="mb-4 text-[#7C7669] font-semibold leading-tight text-xl">
       {children}
     </h4>
   ),
   heading5: ({ children }) => (
-    <h5 className="mb-4 text-dark-2 font-semibold leading-tight text-lg">
+    <h5 className="mb-4 text-[#7C7669] font-semibold leading-tight text-lg">
       {children}
     </h5>
   ),
   heading6: ({ children }) => (
-    <h6 className="mb-4 text-dark-2 font-semibold leading-tight text-base">
+    <h6 className="mb-4 text-[#7C7669] font-semibold leading-tight text-base">
       {children}
     </h6>
   ),
   strong: ({ children }) => (
-    <strong className="font-semibold text-dark-2">{children}</strong>
+    <strong className="font-semibold text-[#7C7669]">{children}</strong>
   ),
-  em: ({ children }) => <em className="italic text-dark-2">{children}</em>,
-  listItem: ({ children }) => <li className="mb-1 text-dark-2">{children}</li>,
-  oListItem: ({ children }) => <li className="mb-1 text-dark-2">{children}</li>,
+  em: ({ children }) => <em className="italic text-[#7C7669]">{children}</em>,
+  listItem: ({ children }) => (
+    <li className="mb-1 text-[#7C7669]">{children}</li>
+  ),
+  oListItem: ({ children }) => (
+    <li className="mb-1 text-[#7C7669]">{children}</li>
+  ),
   list: ({ children }) => (
     <ul className="mb-4 list-disc pl-4 text-dark-2">{children}</ul>
   ),
@@ -74,12 +78,12 @@ const richTextStyling = {
     </PrismicNextLink>
   ),
   quote: ({ children }) => (
-    <blockquote className="border-l-4 border-gray-200 pl-4 italic mb-4 text-gray-600">
+    <blockquote className="border-l-4 border-[#7C7668] pl-4 italic mb-4 text-[#7C7668]">
       {children}
     </blockquote>
   ),
   em: ({ children }) => (
-    <span className="py-12 mb-4 text-3xl lg:text-6xl text-center font-moondance leading-[1.8] tracking-wider text-s_black block">
+    <span className="py-12 mb-4 text-3xl lg:text-6xl text-center font-moondance leading-[1.8] tracking-wider text-[#7C7668] block">
       {children}
     </span>
   ),

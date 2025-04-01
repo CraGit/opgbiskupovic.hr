@@ -7,7 +7,9 @@ export default function AboutUs({ heading, content, group, image }) {
   return (
     <div className="about-sec relative pt-24 md:pb-12 bg-white" id="about">
       <div className="w-full">
-        <h2 className="heading pb-8 max-w-6xl mx-auto px-4 pt-20">{heading}</h2>
+        <h2 className="heading pb-8 max-w-6xl mx-auto px-4 pt-20 text-[#7C7669]">
+          {heading}
+        </h2>
 
         <PrismicNextImage
           field={image}
@@ -31,7 +33,7 @@ export default function AboutUs({ heading, content, group, image }) {
             <div className="counter py-14 lg:py-24 bg-white px-3.5">
               {group.map((item, index) => (
                 <div key={index} className={index > 0 ? "mt-16" : ""}>
-                  <h1 className="counter-numbers font-normal text-yellow-600 text-3xl md:text-6xl md:leading-[65px] text-center font-rufina">
+                  <h1 className="counter-numbers font-normal text-[#7C7669] text-3xl md:text-6xl md:leading-[65px] text-center font-rufina">
                     {item.number}
                   </h1>
                   <p className="font-semibold text-xs md:text-base text-s_counter md:leading-8 tracking-[0.15em] uppercase text-center mt-2.5">
