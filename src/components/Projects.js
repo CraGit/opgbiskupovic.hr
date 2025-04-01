@@ -54,14 +54,14 @@ export default function Projects({
                       />
                     ))}
                 </div>
-                <div className="absolute bottom-0 left-0 w-4/5 md:w-72 h-24 p-5 bg-white transition-all duration-500">
+                {/* <div className="absolute bottom-0 left-0 w-4/5 md:w-72 h-24 p-5 bg-white transition-all duration-500">
                   <h3 className="font-playfair text-lg font-normal tracking-wider text-s_black mb-2.5 transition-all duration-500 uppercase">
                     {project.heading}
                   </h3>
                   <p className="font-releway font-semibold text-sm tracking-wide text-s_proj uppercase">
                     {project.subheading}
                   </p>
-                </div>
+                </div> */}
               </div>
             ))}
 
