@@ -65,7 +65,7 @@ export default function Projects({
               </div>
             ))}
 
-          {viewMoreText && (
+          {/* {viewMoreText && (
             <div className="relative md:row-span-1 max-md:mb-5 mx-auto w-full h-full flex items-center justify-center md:min-h-[249px]">
               <button className="w-44 h-12 rounded-full outline-0 border-none relative z-20 bg-white flex items-center justify-center gap-2 group">
                 <span className="relative z-10 font-releway px-4 font-semibold text-base">
@@ -89,7 +89,7 @@ export default function Projects({
                 <span className="absolute h-12 w-12 aspect-square rounded-full -z-0 top-0 right-0 bg-s_btn_bg transition-all duration-500 group-hover:w-full"></span>
               </button>
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </div>
