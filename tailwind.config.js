@@ -9,7 +9,7 @@ module.exports = {
     fontFamily: {
       sans: 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
       raleway: ["Raleway", "sans-serif"],
-      Playfair: ["Playfair Display", "serif"],
+      playfair: ["Playfair Display", "serif"],
       rufina: ["Rufina", "serif"],
       prata: ["Prata", "serif"],
       moondance: ["Moon Dance", "cursive"],
@@ -33,7 +33,7 @@ module.exports = {
       black: "#000000",
       gray: {
         300: "#D1D5DB",
-        900: "#111827"
+        900: "#111827",
       },
       transparent: "transparent",
       current: "currentColor",
@@ -42,14 +42,14 @@ module.exports = {
     },
     extend: {
       transitionProperty: {
-        'height': 'height',
-        'spacing': 'margin, padding',
+        height: "height",
+        spacing: "margin, padding",
       },
       zIndex: {
-        '9999': '9999',
-        '99999': '99999',
-      }
-    }
+        9999: "9999",
+        99999: "99999",
+      },
+    },
   },
   plugins: [require("@tailwindcss/aspect-ratio")],
 };

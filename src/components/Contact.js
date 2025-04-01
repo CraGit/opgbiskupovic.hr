@@ -54,7 +54,7 @@ export default function Contact({ heading, subtitle, button_text, settings }) {
           <h2 className="heading max-lg:text-center">
             {heading || "Contacts"}
           </h2>
-          <p className="text-2xl font-prata leading-loose tracking-wide text-s_black max-lg:text-center">
+          <p className="text-2xl font-playfair leading-loose tracking-wide text-s_black max-lg:text-center">
             {subtitle || "Questions, or feature requests? Then just email us!"}
           </p>
         </div>

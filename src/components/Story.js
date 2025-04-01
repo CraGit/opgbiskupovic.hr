@@ -13,7 +13,7 @@ const components = {
     <p className="font-releway text-base text-s_text mb-4">{children}</p>
   ),
   heading2: ({ children }) => (
-    <h2 className="font-prata text-2xl text-[#7C7669] mb-6">{children}</h2>
+    <h2 className="font-playfair text-2xl text-[#7C7669] mb-6">{children}</h2>
   ),
 };
 
