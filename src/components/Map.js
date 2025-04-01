@@ -24,7 +24,7 @@ export default function Map({ map_embed_url }) {
   const embedUrl = getZoomedOutUrl(map_embed_url);
 
   return (
-    <div className="map-sec pt-32 relative bg-white lg:mb-[775px]">
+    <div className="map-sec pt-32 relative bg-white mb-16">
       <div className="map">
         <iframe
           src={embedUrl}
