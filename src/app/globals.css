@@ -92,14 +92,4 @@
   .team-sec .slider-img .slick-prev {
     @apply left-[20%] lg:left-[105%]  -bottom-12 lg:bottom-8;
   }
-
-  /* Simple elegant hover effect for service cards */
-  .service-sec .flex {
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  }
-  
-  .service-sec .flex:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-  }
 }

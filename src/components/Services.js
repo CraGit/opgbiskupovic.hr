@@ -17,11 +17,11 @@ export default function Services({ heading, subtitle, services }) {
           {subtitle}
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-10 overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-10">
           {services.map((service, index) => (
             <div
               key={index}
-              className="flex flex-col overflow-hidden"
+              className="flex flex-col"
               data-aos="fade-up"
               data-aos-delay={200 + index * 100}
             >
