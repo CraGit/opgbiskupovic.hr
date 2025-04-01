@@ -17,7 +17,7 @@ export default function Services({ heading, subtitle, services }) {
           {subtitle}
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-md lg:max-w-full mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-10 overflow-hidden">
           {services.map((service, index) => (
             <div
               key={index}
@@ -25,7 +25,7 @@ export default function Services({ heading, subtitle, services }) {
               data-aos="fade-up"
               data-aos-delay={200 + index * 100}
             >
-              <div className="relative cursor-pointer aspect-square">
+              <div className="relative cursor-pointer aspect-square overflow-hidden">
                 <PrismicNextImage
                   field={service.image}
                   className="w-full h-full object-cover transition-all duration-500 hover:scale-[1.1]"

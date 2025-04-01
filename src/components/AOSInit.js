@@ -10,6 +10,9 @@ export default function AOSInit() {
       duration: 1000,
       once: true,
       offset: 100,
+      disable: 'mobile', // Disable on mobile to prevent layout shifts
+      mirror: false,
+      disableMutationObserver: false,
     });
   }, []);
 

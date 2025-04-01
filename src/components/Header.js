@@ -82,14 +82,13 @@ export function Header({ locales = [], navigation, settings }) {
       <div id="toggle-menu" className="toggle-menu closed">
         <div className="p-4 py-10 pb-20">
           <div className="w-full max-w-6xl flex flex-col md:flex-row items-center justify-between mx-auto">
-            <ul className="transform transition-all duration-500 delay-150 flex flex-col gap-4 max-md:mb-5 md:gap-9 w-full">
+            <ul className="transform transition-all duration-300 flex flex-col gap-4 max-md:mb-5 md:gap-9 w-full">
               {navigation.data?.links.map((item, index) => {
                 const isActive = pathname === prismic.asLink(item.link);
                 return (
                   <li
                     key={prismic.asText(item.label)}
-                    className="link-hoder transition-all duration-500 -translate-y-10"
-                    style={{ transitionDelay: `${(index + 1) * 200}ms` }}
+                    className="link-hoder transition-all duration-300 -translate-y-10"
                   >
                     <PrismicNextLink
                       field={item.link}
@@ -104,11 +103,10 @@ export function Header({ locales = [], navigation, settings }) {
                 );
               })}
             </ul>
-            <ul className="transform transition-all duration-500 delay-150 flex flex-col md:items-end justify-center w-full gap-4 md:gap-6">
+            <ul className="transform transition-all duration-300 flex flex-col md:items-end justify-center w-full gap-4 md:gap-6">
               {data.facebook && (
                 <li
-                  className="link-hoder transition-all duration-500 -translate-y-10"
-                  style={{ transitionDelay: "100ms" }}
+                  className="link-hoder transition-all duration-300 -translate-y-10"
                 >
                   <a
                     href={data.facebook}
@@ -122,8 +120,7 @@ export function Header({ locales = [], navigation, settings }) {
               )}
               {data.instagram && (
                 <li
-                  className="link-hoder transition-all duration-500 -translate-y-10"
-                  style={{ transitionDelay: "300ms" }}
+                  className="link-hoder transition-all duration-300 -translate-y-10"
                 >
                   <a
                     href={data.instagram}
@@ -138,8 +135,7 @@ export function Header({ locales = [], navigation, settings }) {
               {locales.map((locale, index) => (
                 <li
                   key={locale.lang}
-                  className="link-hoder transition-all duration-500 -translate-y-10"
-                  style={{ transitionDelay: `${(index + 2) * 200}ms` }}
+                  className="link-hoder transition-all duration-300 -translate-y-10"
                 >
                   <PrismicNextLink
                     href={locale.url}
