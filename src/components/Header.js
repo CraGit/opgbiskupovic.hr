@@ -52,9 +52,7 @@ export function Header({ locales = [], navigation, settings }) {
               )}
             </Link>
             <ul className="flex items-center gap-3">
-              <li className="font-medium font-raleway text-lg uppercase text-black">
-                Menu
-              </li>
+              <li className="font-medium font-raleway text-lg uppercase text-black"></li>
               <li className="flex items-center">
                 <button
                   className=""
@@ -112,7 +110,7 @@ export function Header({ locales = [], navigation, settings }) {
                   className="link-hoder transition-all duration-500 -translate-y-10"
                   style={{ transitionDelay: "100ms" }}
                 >
-                  <a 
+                  <a
                     href={data.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -127,7 +125,7 @@ export function Header({ locales = [], navigation, settings }) {
                   className="link-hoder transition-all duration-500 -translate-y-10"
                   style={{ transitionDelay: "300ms" }}
                 >
-                  <a 
+                  <a
                     href={data.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
