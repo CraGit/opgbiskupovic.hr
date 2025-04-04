@@ -18,6 +18,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={clsx(inter.className)}>
       <head>
+        <meta name="color-scheme" content="light only" />
+        <meta name="supported-color-schemes" content="light" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
