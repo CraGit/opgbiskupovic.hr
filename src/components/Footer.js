@@ -9,10 +9,10 @@ import { usePathname } from "next/navigation";
 export function Footer({ settings, navigation }) {
   const data = settings?.data || {};
   const pathname = usePathname();
-  
+
   // Determine current locale from pathname
-  const currentLocale = pathname.startsWith('/hr') ? '/hr' : '';
-  
+  const currentLocale = pathname.startsWith("/hr") ? "/hr" : "";
+
   return (
     <footer className="h-auto w-full p-4 pt-0 lg:pt-32 border-0 border-white bg-[#7C7669]">
       <div className="w-full max-w-6xl mx-auto px-6">
@@ -60,17 +60,20 @@ export function Footer({ settings, navigation }) {
                     field={data.logo_white}
                     alt="OPG Biskupović logo"
                   />
-                ) : prismic.isFilled.image(data.logo) && (
-                  <PrismicNextImage
-                    field={data.logo}
-                    alt="OPG Biskupović logo"
-                    className="invert"
-                  />
+                ) : (
+                  prismic.isFilled.image(data.logo) && (
+                    <PrismicNextImage
+                      field={data.logo}
+                      alt="OPG Biskupović logo"
+                      className="invert"
+                    />
+                  )
                 )}
               </Link>
             </li>
             <li className="text-sm text-white text-opacity-80 leading-8 max-sm:text-center">
-              {data.footer_description || "OPG Biskupović je obiteljsko poljoprivredno gospodarstvo koje se bavi uzgojem maslina i proizvodnjom maslinovog ulja."}
+              {data.footer_description ||
+                "OPG Biskupović je obiteljsko poljoprivredno gospodarstvo koje se bavi uzgojem maslina i proizvodnjom maslinovog ulja."}
             </li>
             <li className="text-sm text-white text-opacity-80 leading-8">
               {new Date().getFullYear()}{" "}
@@ -113,7 +116,7 @@ export function Footer({ settings, navigation }) {
             {data.phone_number && (
               <li>
                 <a
-                  href={`tel:${data.phone_number.replace(/\s+/g, '')}`}
+                  href={`tel:${data.phone_number.replace(/\s+/g, "")}`}
                   className="font-raleway text-white text-opacity-80 text-sm font-medium transition-all duration-500 hover:text-white"
                 >
                   {data.phone_number}

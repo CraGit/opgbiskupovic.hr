@@ -33,7 +33,7 @@ export default function AboutUs({ heading, content, group, image }) {
             <div className="counter py-14 lg:py-24 bg-white px-3.5">
               {group.map((item, index) => (
                 <div key={index} className={index > 0 ? "mt-16" : ""}>
-                  <h1 className="counter-numbers font-normal text-[#7C7669] text-3xl md:text-6xl md:leading-[65px] text-center font-rufina">
+                  <h1 className="counter-numbers font-normal text-[#7C7669] text-3xl md:text-6xl md:leading-[65px] text-center font-title">
                     {item.number}
                   </h1>
                   <p className="font-semibold text-xs md:text-base text-s_counter md:leading-8 tracking-[0.15em] uppercase text-center mt-2.5">

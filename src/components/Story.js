@@ -10,10 +10,10 @@ import richTextStyling from "@/app/utility/richTextStyling";
 
 const components = {
   paragraph: ({ children }) => (
-    <p className="font-releway text-base text-s_text mb-4">{children}</p>
+    <p className="font-text text-base text-s_text mb-4">{children}</p>
   ),
   heading2: ({ children }) => (
-    <h2 className="font-playfair text-2xl text-[#7C7669] mb-6">{children}</h2>
+    <h2 className="font-title text-2xl text-[#7C7669] mb-6">{children}</h2>
   ),
 };
 
@@ -34,7 +34,7 @@ export default function Story({
             >
               {heading}
             </h2>
-            <div className="font-releway text-base text-s_text max-w-xl">
+            <div className="font-text text-base text-s_text max-w-xl">
               <PrismicRichText field={description} components={components} />
             </div>
           </div>

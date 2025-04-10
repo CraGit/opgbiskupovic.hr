@@ -8,11 +8,9 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-      raleway: ["Raleway", "sans-serif"],
-      playfair: ["Playfair Display", "serif"],
-      rufina: ["Rufina", "serif"],
-      prata: ["Prata", "serif"],
-      moondance: ["Moon Dance", "cursive"],
+      text: ["Proza Libre", "sans-serif"],
+      title: ["Cormorant Garamond", "serif"],
+      quotes: ["Moon Dance", "cursive"],
     },
     colors: {
       mycolor: "#EBB444",

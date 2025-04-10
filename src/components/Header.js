@@ -105,9 +105,7 @@ export function Header({ locales = [], navigation, settings }) {
             </ul>
             <ul className="transform transition-all duration-300 flex flex-col md:items-end justify-center w-full gap-4 md:gap-6">
               {data.facebook && (
-                <li
-                  className="link-hoder transition-all duration-300 -translate-y-10"
-                >
+                <li className="link-hoder transition-all duration-300 -translate-y-10">
                   <a
                     href={data.facebook}
                     target="_blank"
@@ -119,9 +117,7 @@ export function Header({ locales = [], navigation, settings }) {
                 </li>
               )}
               {data.instagram && (
-                <li
-                  className="link-hoder transition-all duration-300 -translate-y-10"
-                >
+                <li className="link-hoder transition-all duration-300 -translate-y-10">
                   <a
                     href={data.instagram}
                     target="_blank"

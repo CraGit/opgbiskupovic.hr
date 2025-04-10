@@ -9,7 +9,7 @@
 }
 
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Prata&family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Proza+Libre:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 @layer base {
   html {
@@ -17,7 +17,7 @@
   }
 
   body {
-    @apply font-raleway;
+    @apply font-text;
   }
 
   main {
@@ -45,7 +45,7 @@
     @apply block absolute top-5 right-5 md:hidden;
   }
   .nav_links {
-    @apply text-black font-normal text-2xl md:text-5xl leading-9 font-raleway transition-all duration-700;
+    @apply text-black font-normal text-2xl md:text-5xl leading-9 font-text transition-all duration-700;
   }
   .nav_links.active {
     @apply text-s_skin before:bg-s_skin;
@@ -57,7 +57,7 @@
     @apply absolute w-0 h-[3px] top-1/2 -translate-y-1/2 left-full transition-all duration-700 group-hover:w-20 z-50;
   }
   .social-link {
-    @apply text-s_black font-normal text-base md:text-xl leading-8 font-raleway relative transition-all duration-500;
+    @apply text-s_black font-normal text-base md:text-xl leading-8 font-text relative transition-all duration-500;
   }
   .social-link .line {
     @apply h-0.5;
@@ -67,11 +67,11 @@
   }
 
   .pera {
-    @apply text-sm leading-7 font-raleway font-normal text-s_pera max-lg:text-center;
+    @apply text-sm leading-7 font-text font-normal text-s_pera max-lg:text-center;
   }
 
   .heading {
-    @apply font-playfair text-3xl lg:text-5xl lg:leading-relaxed font-normal text-s_black relative max-lg:text-center;
+    @apply font-title text-3xl lg:text-5xl lg:leading-relaxed font-normal text-s_black relative max-lg:text-center;
   }
   .swiper-button-prev {
     left: 40px !important;
