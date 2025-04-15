@@ -11,7 +11,7 @@ export default function Hero({ heading, slider, settings }) {
   const data = settings?.data || {};
 
   return (
-    <div className="hiro-sec relative -top-0 pt-24 pb-0 lg:h-screen bg-white h-full">
+    <div className="hiro-sec relative -top-0 pt-12 md:pt-24 pb-0 lg:h-screen bg-white h-full">
       <div className="w-full max-w-6xl mx-auto">
         <h1 className="text-2xl lg:text-5xl lg:leading-normal max-lg:text-center text-[#7C7669] font-normal tracking-wide font-title mb-12 max-w-3xl lg:max-w-full mx-auto">
           {heading}
