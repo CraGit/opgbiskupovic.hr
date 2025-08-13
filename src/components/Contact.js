@@ -30,15 +30,20 @@ export default function Contact({ heading, subtitle, button_text, settings }) {
     setSubmitError(false);
 
     try {
-      // Here you would typically send the form data to your backend
-      // This is a placeholder for the actual form submission logic
-      console.log("Form submitted:", formData);
-      
-      // Simulate successful submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      setSubmitSuccess(true);
-      setFormData({ name: "", email: "", message: "" });
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitSuccess(true);
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        throw new Error('Failed to send message');
+      }
     } catch (error) {
       console.error("Form submission error:", error);
       setSubmitError(true);
@@ -169,7 +174,7 @@ export default function Contact({ heading, subtitle, button_text, settings }) {
               
               <div className="relative w-full mb-8 lg:mb-12 before:contents-[''] before:absolute before:bottom-0 before:w-full before:h-[1px] before:bg-s_proj group transition-all duration-500">
                 <textarea
-                  className="w-full relative z-[2] bg-transparent border-none outline-0 pt-4 pb-2.5 text-base font-medium leading-loose tracking-widest text-justify text-s_proj resize-none"
+                  className="w-full relative z-[2] bg-transparent border-none outline-0 pt-4 pb-2.5 text-base font-medium leading-loose tracking-widest text-justify text-s_proj resize-none min-h-[60px]"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
