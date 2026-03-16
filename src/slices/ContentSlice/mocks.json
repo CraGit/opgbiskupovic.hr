@@ -1,0 +1,73 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Politika privatnosti"
+						}
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "OPG Biskupović posvećen je zaštiti vaše privatnosti. Ovaj dokument opisuje kako prikupljamo, koristimo i štitimo vaše osobne podatke u skladu s važećim propisima."
+						}
+					},
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Prikupljanje podataka"
+						}
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Podatke prikupljamo isključivo u svrhu pružanja naših usluga i poboljšanja korisničkog iskustva."
+						}
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Ime i prezime"
+						}
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Adresa e-pošte"
+						}
+					},
+					{
+						"type": "list-item",
+						"content": {
+							"text": "Telefonski broj"
+						}
+					},
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Vaša prava"
+						}
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Imate pravo na pristup, ispravak i brisanje vaših osobnih podataka u bilo kojem trenutku."
+						}
+					}
+				]
+			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "Politika privatnosti",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

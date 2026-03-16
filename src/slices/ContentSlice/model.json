@@ -1,0 +1,34 @@
+{
+  "description": "Rich text content slice for pages like privacy policy, wine labels, etc.",
+  "id": "content_slice",
+  "name": "ContentSlice",
+  "type": "SharedSlice",
+  "variations": [
+    {
+      "description": "Default rich text content variation",
+      "docURL": "...",
+      "id": "default",
+      "imageUrl": "",
+      "name": "Default",
+      "primary": {
+        "body": {
+          "config": {
+            "allowTargetBlank": true,
+            "label": "Body",
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+            "placeholder": "Page content..."
+          },
+          "type": "StructuredText"
+        },
+        "title": {
+          "config": {
+            "label": "Title",
+            "placeholder": "Page title (optional)"
+          },
+          "type": "Text"
+        }
+      },
+      "version": "initial"
+    }
+  ]
+}

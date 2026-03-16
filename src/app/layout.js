@@ -5,6 +5,7 @@ import { PrismicPreview } from "@prismicio/next";
 import clsx from "clsx";
 
 import { repositoryName } from "@/prismicio";
+import AgeVerificationModal from "@/components/AgeVerificationModal";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="overflow-x-hidden antialiased">
+        <AgeVerificationModal />
         {children}
         <PrismicPreview repositoryName={repositoryName} />
       </body>

@@ -423,6 +423,61 @@ export type ContactSliceSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ContentSlice → Default → Primary*
+ */
+export interface ContentSliceSliceDefaultPrimary {
+  /**
+   * Body field in *ContentSlice → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Page content...
+   * - **API ID Path**: content_slice.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * Title field in *ContentSlice → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Page title (optional)
+   * - **API ID Path**: content_slice.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ContentSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default rich text content variation
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContentSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ContentSlice*
+ */
+type ContentSliceSliceVariation = ContentSliceSliceDefault;
+
+/**
+ * ContentSlice Shared Slice
+ *
+ * - **API ID**: `content_slice`
+ * - **Description**: Rich text content slice for pages like privacy policy, wine labels, etc.
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContentSliceSlice = prismic.SharedSlice<
+  "content_slice",
+  ContentSliceSliceVariation
+>;
+
+/**
  * Item in *HeroSlice → Default → Primary → Slider*
  */
 export interface HeroSliceSliceDefaultPrimarySliderItem {
@@ -1054,6 +1109,10 @@ declare module "@prismicio/client" {
       ContactSliceSliceDefaultPrimary,
       ContactSliceSliceVariation,
       ContactSliceSliceDefault,
+      ContentSliceSlice,
+      ContentSliceSliceDefaultPrimary,
+      ContentSliceSliceVariation,
+      ContentSliceSliceDefault,
       HeroSliceSlice,
       HeroSliceSliceDefaultPrimarySliderItem,
       HeroSliceSliceDefaultPrimary,
