@@ -3,7 +3,7 @@ export default function ContactBar() {
     <div className="fixed bottom-0 right-0 mb-1 mr-2 md:mb-2 md:mr-3 z-20 flex flex-row gap-2 h-16 justify-between opacity-95">
       <a
         className="hover:opacity-90 transition-all duration-100 hover:scale-105"
-        href="https://wa.me/38997080851"
+        href="https://wa.me/385997080851"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contact us on WhatsApp"
