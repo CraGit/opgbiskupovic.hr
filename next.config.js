@@ -9,6 +9,16 @@ const nextConfig = async () => {
           destination: "https://opgbiskupovichr.prismic.io/",
           permanent: true,
         },
+        {
+          source: "/cjenici",
+          destination: "https://cjenici.parra.hr/jwmo/opg-biskupovic-marta",
+          statusCode: 301,
+        },
+        {
+          source: "/:lang/cjenici",
+          destination: "https://cjenici.parra.hr/jwmo/opg-biskupovic-marta",
+          statusCode: 301,
+        },
       ];
     },
   };
